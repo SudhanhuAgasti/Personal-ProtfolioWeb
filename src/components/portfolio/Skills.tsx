@@ -145,7 +145,7 @@ export function Skills() {
             02 — Skills
           </p>
           <h2 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-            The <span className="text-gradient">toolkit</span> I ship with !
+            The <span className="text-gradient">toolkit</span> I ship with!
           </h2>
         </motion.div>
 
