@@ -43,7 +43,7 @@ export function Testimonials() {
           08 — Testimonials
         </p>
         <h2 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-          Kind words from <span className="text-gradient">collaborators</span> !
+          Kind words from <span className="text-gradient">collaborators</span>!
         </h2>
 
         <div className="relative mt-16 min-h-[260px] flex items-center justify-center w-full">

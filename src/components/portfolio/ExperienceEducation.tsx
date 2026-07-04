@@ -85,7 +85,7 @@ export function ExperienceEducation() {
             04 — Experience
           </p>
           <h2 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
-            Where I've<span className="text-gradient"> shipped</span> !
+            Where I've<span className="text-gradient"> shipped</span>!
           </h2>
           <div className="mt-10">
             <TimelineList items={experience} icon={Briefcase} />
@@ -96,7 +96,7 @@ export function ExperienceEducation() {
             05 — Education
           </p>
           <h2 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
-            What I've <span className="text-gradient">learned</span> !
+            What I've <span className="text-gradient">learned</span>!
           </h2>
           <div className="mt-10">
             <TimelineList items={education} icon={GraduationCap} />

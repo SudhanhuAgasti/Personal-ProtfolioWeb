@@ -54,7 +54,7 @@ export function GithubDashboard() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold">@shradha-suman-das</p>
-                  <p className="text-xs text-muted-foreground"> contributions of mine </p> !
+                  <p className="text-xs text-muted-foreground"> contributions of mine </p>!
                 </div>
               </div>
               <div className="flex gap-4 text-xs text-muted-foreground">

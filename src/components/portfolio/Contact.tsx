@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { useState, type ChangeEvent } from "react";
 import { Send } from "lucide-react";
 import { MagneticButton } from "./MagneticButton";
-import { toast } from "sonner";
 
 function Field({
   label,
@@ -42,19 +41,6 @@ function Field({
 }
 
 export function Contact() {
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast.success("Message sent successfully!");
-    
-    // Smooth scroll to top / home page
-    const topElement = document.getElementById("top");
-    if (topElement) {
-      topElement.scrollIntoView({ behavior: "smooth" });
-    } else {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  };
-
   return (
     <section id="contact" className="relative py-32 px-6">
       <div
@@ -73,10 +59,10 @@ export function Contact() {
             09 — Contact
           </p>
           <h2 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-            Let's build something <span className="text-gradient">exceptional</span> !
+            Let's build something <span className="text-gradient">exceptional</span>!
           </h2>
           <p className="mt-5 text-muted-foreground">
-            Have a project in mind, or just want to say hi? My inbox is open !
+            Have a project in mind, or just want to say hi? My inbox is open!
           </p>
         </motion.div>
 
@@ -85,7 +71,7 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          onSubmit={handleSubmit}
+          onSubmit={(e) => e.preventDefault()}
           className="glass-strong mt-14 grid gap-4 rounded-3xl p-8 sm:p-10"
         >
           <div className="grid gap-4 sm:grid-cols-2">
@@ -106,7 +92,7 @@ export function Contact() {
               </a>
             </p>
             <MagneticButton className="group rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-black shadow-[0_0_40px_-10px_rgba(255,255,255,0.6)]">
-              Send Message{" "}
+              Send Message{"  "}
               <Send size={16} className="ml-2 transition-transform group-hover:translate-x-1" />
             </MagneticButton>
           </div>

@@ -36,7 +36,7 @@ export function TechMarquee() {
     <section className="relative py-20 border-y border-white/5">
       <div className="mx-auto max-w-7xl px-6">
         <p className="text-center font-mono text-xs uppercase tracking-[0.3em] text-muted-foreground">
-          The stack I use every day !
+          The stack I use every day!
         </p>
       </div>
       <div className="relative mt-10 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_10%,black_90%,transparent)]">

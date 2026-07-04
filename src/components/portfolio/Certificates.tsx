@@ -28,7 +28,7 @@ export function Certificates() {
             07 — Certificates
           </p>
           <h2 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-            Learning <span className="text-gradient">Achievements</span> !
+            Learning <span className="text-gradient">Achievements</span>!
           </h2>
         </motion.div>
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
