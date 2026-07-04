@@ -11,10 +11,12 @@ import { Certificates } from "@/components/portfolio/Certificates";
 import { Testimonials } from "@/components/portfolio/Testimonials";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
+import { Toaster } from "@/components/ui/sonner";
 
 export default function App() {
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
+      <Toaster />
       <CustomCursor />
       <Navbar />
       <Hero />
