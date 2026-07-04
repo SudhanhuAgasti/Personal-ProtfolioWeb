@@ -79,10 +79,10 @@ export function Navbar() {
                   style={{ filter: "drop-shadow(0 0 4px oklch(0.72 0.19 140))" }}
                 />
               </svg>
+              <span className="font-display text-sm font-extrabold tracking-tight text-white sm:text-base ml-0.5">
+                Das
+              </span>
             </div>
-            <span className="font-display text-sm font-extrabold tracking-tight text-white sm:text-base ml-0.5">
-              <span className="text-[var(--neon-cyan)]">Das</span>
-            </span>
           </a>
           <div className="flex items-center gap-0.5 sm:gap-1">
             {links.map((l) => (

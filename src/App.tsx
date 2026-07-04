@@ -1,4 +1,3 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { CustomCursor } from "@/components/portfolio/CustomCursor";
 import { Navbar } from "@/components/portfolio/Navbar";
 import { Hero } from "@/components/portfolio/Hero";
@@ -13,11 +12,7 @@ import { Testimonials } from "@/components/portfolio/Testimonials";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
 
-export const Route = createFileRoute("/")({
-  component: Index,
-});
-
-function Index() {
+export default function App() {
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
       <CustomCursor />
