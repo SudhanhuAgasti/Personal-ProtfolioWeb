@@ -73,15 +73,15 @@ export function Hero() {
       <div className="absolute inset-0 hero-mesh pointer-events-none" aria-hidden />
       <div className="absolute inset-0 grid-bg opacity-60 pointer-events-none" aria-hidden />
       <div
-        className="absolute -top-32 -left-32 h-[520px] w-[520px] rounded-full bg-[var(--neon-violet)] opacity-30 blur-[120px] animate-blob pointer-events-none"
+        className="absolute -top-32 -left-32 h-[520px] w-[520px] rounded-full bg-[var(--neon-violet)] opacity-30 blur-[120px] animate-blob pointer-events-none hidden sm:block will-change-transform"
         aria-hidden
       />
       <div
-        className="absolute top-40 -right-32 h-[480px] w-[480px] rounded-full bg-[var(--neon-cyan)] opacity-25 blur-[120px] animate-blob [animation-delay:-6s] pointer-events-none"
+        className="absolute top-40 -right-32 h-[480px] w-[480px] rounded-full bg-[var(--neon-cyan)] opacity-25 blur-[120px] animate-blob [animation-delay:-6s] pointer-events-none hidden sm:block will-change-transform"
         aria-hidden
       />
       <div
-        className="absolute bottom-0 left-1/3 h-[420px] w-[420px] rounded-full bg-[var(--neon-pink)] opacity-20 blur-[120px] animate-blob [animation-delay:-12s] pointer-events-none"
+        className="absolute bottom-0 left-1/3 h-[420px] w-[420px] rounded-full bg-[var(--neon-pink)] opacity-20 blur-[120px] animate-blob [animation-delay:-12s] pointer-events-none hidden sm:block will-change-transform"
         aria-hidden
       />
 
