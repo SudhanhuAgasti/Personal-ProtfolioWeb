@@ -37,7 +37,13 @@ export function Hero() {
         },
       });
 
-      // Mouse parallax
+      // Only attach mouse parallax on desktop screens to prevent lag on mobile emulation
+      const isMobile =
+        window.matchMedia("(max-width: 768px)").matches ||
+        "ontouchstart" in window ||
+        navigator.maxTouchPoints > 0;
+      if (isMobile) return;
+
       const onMove = (e: MouseEvent) => {
         const cx = window.innerWidth / 2;
         const cy = window.innerHeight / 2;

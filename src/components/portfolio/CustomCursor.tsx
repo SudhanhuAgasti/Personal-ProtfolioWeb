@@ -7,7 +7,16 @@ export function CustomCursor() {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    if (window.matchMedia("(pointer: coarse)").matches) return;
+    const isMobileOrTouch =
+      window.matchMedia("(max-width: 768px)").matches ||
+      window.matchMedia("(pointer: coarse)").matches ||
+      "ontouchstart" in window ||
+      navigator.maxTouchPoints > 0;
+
+    if (isMobileOrTouch) {
+      setEnabled(false);
+      return;
+    }
     setEnabled(true);
   }, []);
 

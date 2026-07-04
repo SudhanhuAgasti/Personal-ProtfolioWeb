@@ -54,7 +54,7 @@ export function Navbar() {
             href="#contact"
             className="ml-1 rounded-full bg-white/95 px-2.5 py-1 text-[11px] font-medium text-black transition-transform hover:scale-105 sm:px-4 sm:py-1.5 sm:text-sm"
           >
-            Let's Talk !!
+            Let's Talk
           </a>
         </nav>
       </motion.div>
