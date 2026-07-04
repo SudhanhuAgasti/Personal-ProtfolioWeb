@@ -7,6 +7,7 @@ interface Props {
   strength?: number;
   as?: "button" | "a";
   href?: string;
+  download?: string;
   onClick?: () => void;
 }
 
@@ -16,6 +17,7 @@ export function MagneticButton({
   strength = 25,
   as = "button",
   href,
+  download,
   onClick,
 }: Props) {
   const ref = useRef<HTMLElement>(null);
@@ -47,6 +49,7 @@ export function MagneticButton({
         ref={ref as React.Ref<HTMLAnchorElement>}
         href={href}
         onClick={onClick}
+        download={download}
         suppressHydrationWarning
         className={`inline-flex items-center justify-center transition-transform duration-300 ease-out ${className}`}
         whileTap={{ scale: 0.96 }}
