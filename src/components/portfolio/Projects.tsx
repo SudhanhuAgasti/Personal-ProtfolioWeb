@@ -45,12 +45,6 @@ export function Projects() {
               Featured <span className="text-gradient">projects</span> !
             </h2>
           </div>
-          <a
-            href="#"
-            className="glass rounded-full px-5 py-2.5 text-sm text-muted-foreground hover:text-foreground"
-          >
-            View all →
-          </a>
         </motion.div>
 
         <div className="mt-16 grid gap-6 md:grid-cols-2">

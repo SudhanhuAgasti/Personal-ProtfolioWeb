@@ -169,7 +169,8 @@ export function Hero() {
             </MagneticButton>
             <MagneticButton
               as="a"
-              href="#"
+              href="/shradha_resume.pdf"
+              download="Shradha_Suman_Das_Resume.pdf"
               className="glass rounded-full px-7 py-3.5 text-sm font-medium text-foreground hover:bg-white/10"
             >
               <Download size={16} className="mr-2" /> Download Resume
