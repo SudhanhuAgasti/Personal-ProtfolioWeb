@@ -1,18 +1,16 @@
 import { motion } from "framer-motion";
 import { useState, type ChangeEvent } from "react";
-import { Send, User, Mail, FileText, MessageSquare } from "lucide-react";
+import { Send } from "lucide-react";
 import { MagneticButton } from "./MagneticButton";
 
 function Field({
   label,
   type = "text",
   textarea = false,
-  icon: Icon,
 }: {
   label: string;
   type?: string;
   textarea?: boolean;
-  icon?: React.ElementType;
 }) {
   const [val, setVal] = useState("");
   const [focus, setFocus] = useState(false);
@@ -24,37 +22,17 @@ function Field({
     onBlur: () => setFocus(false),
     suppressHydrationWarning: true,
     className:
-      "peer w-full bg-transparent pl-12 pr-4 pt-6 pb-2 text-foreground outline-none placeholder-transparent transition-all duration-300",
+      "peer w-full bg-transparent px-4 pt-6 pb-2 text-foreground outline-none placeholder-transparent",
   };
   return (
-    <div className="glass relative rounded-2xl border border-white/5 bg-white/[0.01] transition-all duration-300 focus-within:border-white/20 focus-within:bg-white/[0.04] focus-within:shadow-[0_0_30px_-15px_var(--neon-violet)] hover:border-white/10">
-      {Icon && (
-        <div className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground transition-colors pointer-events-none z-10">
-          <Icon
-            size={18}
-            className={`transition-colors duration-300 ${focus ? "text-[var(--neon-cyan)]" : "text-muted-foreground"}`}
-          />
-        </div>
-      )}
+    <div className="glass relative rounded-2xl transition-all focus-within:border-white/30 focus-within:shadow-[0_0_40px_-20px_var(--neon-violet)]">
       {textarea ? (
-        <textarea
-          rows={4}
-          {...props}
-          placeholder={label}
-          className={`${props.className} resize-none`}
-          style={{ paddingTop: "1.75rem" }}
-        />
+        <textarea rows={4} {...props} placeholder={label} />
       ) : (
         <input type={type} {...props} placeholder={label} />
       )}
       <label
-        className={`pointer-events-none absolute left-12 transition-all duration-300 ${
-          active
-            ? "top-1.5 text-[9px] uppercase tracking-widest text-[var(--neon-cyan)]"
-            : textarea
-              ? "top-6 text-sm text-muted-foreground"
-              : "top-1/2 -translate-y-1/2 text-sm text-muted-foreground"
-        }`}
+        className={`pointer-events-none absolute left-4 transition-all duration-300 ${active ? "top-1.5 text-[10px] uppercase tracking-widest text-[var(--neon-cyan)]" : "top-4 text-sm text-muted-foreground"}`}
       >
         {label}
       </label>
@@ -97,11 +75,11 @@ export function Contact() {
           className="glass-strong mt-14 grid gap-4 rounded-3xl p-8 sm:p-10"
         >
           <div className="grid gap-4 sm:grid-cols-2">
-            <Field label="Your name" icon={User} />
-            <Field label="Email" type="email" icon={Mail} />
+            <Field label="Your name" />
+            <Field label="Email" type="email" />
           </div>
-          <Field label="Subject" icon={FileText} />
-          <Field label="Tell me about your project" textarea icon={MessageSquare} />
+          <Field label="Subject" />
+          <Field label="Tell me about your project" textarea />
 
           <div className="flex flex-wrap items-center justify-between gap-4 pt-2">
             <p className="text-sm text-muted-foreground">

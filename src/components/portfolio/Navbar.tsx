@@ -1,5 +1,6 @@
-import { motion, useScroll, useSpring } from "framer-motion";
+import { motion, useScroll, useSpring, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
 
 const links = [
   { label: "About", href: "#about" },
@@ -13,6 +14,7 @@ export function Navbar() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 30, restDelta: 0.001 });
   const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -32,8 +34,17 @@ export function Navbar() {
         <nav
           className={`glass flex items-center gap-1 rounded-full px-2 py-2 transition-all duration-500 ${scrolled ? "glow-violet" : ""}`}
         >
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="flex md:hidden p-1.5 rounded-full text-muted-foreground hover:text-foreground transition-colors ml-1"
+            aria-label="Toggle menu"
+            suppressHydrationWarning
+          >
+            {isOpen ? <X size={18} /> : <Menu size={18} />}
+          </button>
           <a
             href="#top"
+            onClick={() => setIsOpen(false)}
             className="flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-semibold tracking-tight"
           >
             <span className="h-2 w-2 rounded-full bg-primary shadow-[0_0_10px_var(--neon-violet)]" />
@@ -52,12 +63,44 @@ export function Navbar() {
           </div>
           <a
             href="#contact"
-            className="ml-1 rounded-full bg-white/95 px-4 py-1.5 text-sm font-medium text-black transition-transform hover:scale-105"
+            onClick={() => setIsOpen(false)}
+            className="ml-1 rounded-full bg-white/95 px-4 py-1.5 text-sm font-medium text-black transition-transform hover:scale-105 hidden sm:block"
           >
             Let's Talk !!
           </a>
         </nav>
       </motion.div>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-x-4 top-20 z-40 md:hidden glass rounded-3xl p-6 flex flex-col gap-4 glow-violet"
+          >
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setIsOpen(false)}
+                className="text-base font-medium text-muted-foreground transition-colors hover:text-foreground py-2 border-b border-white/5 last:border-0"
+              >
+                {l.label}
+              </a>
+            ))}
+            <a
+              href="#contact"
+              onClick={() => setIsOpen(false)}
+              className="mt-2 text-center rounded-full bg-white px-4 py-2.5 text-sm font-semibold text-black"
+            >
+              Let's Talk !!
+            </a>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <motion.div
         style={{ scaleX }}
         className="fixed inset-x-0 top-0 z-[60] h-[2px] origin-left bg-gradient-to-r from-[var(--neon-violet)] via-[var(--neon-cyan)] to-[var(--neon-pink)]"
