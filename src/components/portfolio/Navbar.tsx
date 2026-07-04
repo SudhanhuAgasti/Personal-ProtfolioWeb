@@ -113,7 +113,7 @@ export function Navbar() {
             {/* Mobile Menu Toggle Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="flex h-9 w-9 items-center justify-center rounded-full bg-white/5 border border-white/10 text-white md:hidden hover:bg-white/10 transition-colors"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-black md:hidden hover:bg-zinc-200 transition-colors shadow-[0_0_15px_-3px_rgba(255,255,255,0.4)]"
               aria-label="Toggle navigation menu"
             >
               {isOpen ? <X size={18} /> : <Menu size={18} />}
@@ -128,7 +128,7 @@ export function Navbar() {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: -15, scale: 0.98 }}
                 transition={{ duration: 0.25, ease: "easeOut" }}
-                className="absolute top-full left-0 right-0 mt-2 glass-strong rounded-3xl p-4 flex flex-col gap-2 md:hidden glow-violet z-40"
+                className="absolute top-full left-0 right-0 mt-2 bg-black/95 border border-white/15 rounded-3xl p-4 flex flex-col gap-2 md:hidden glow-violet z-40"
               >
                 {links.map((l, index) => (
                   <motion.a
@@ -138,7 +138,7 @@ export function Navbar() {
                     key={l.href}
                     href={l.href}
                     onClick={() => setIsOpen(false)}
-                    className="rounded-xl px-4 py-3 text-sm font-medium text-muted-foreground transition-colors hover:text-white hover:bg-white/5"
+                    className="rounded-xl px-4 py-3 text-sm font-semibold text-zinc-200 transition-colors hover:text-white hover:bg-white/10"
                   >
                     {l.label}
                   </motion.a>
@@ -149,7 +149,7 @@ export function Navbar() {
                   transition={{ delay: links.length * 0.05 }}
                   href="#contact"
                   onClick={() => setIsOpen(false)}
-                  className="mt-2 rounded-xl bg-white text-center py-3 text-sm font-semibold text-black transition-transform active:scale-95 shadow-[0_0_20px_-5px_rgba(255,255,255,0.4)]"
+                  className="mt-2 rounded-xl bg-white text-center py-3 text-sm font-bold text-black transition-transform active:scale-95 shadow-[0_0_20px_-5px_rgba(255,255,255,0.4)]"
                 >
                   Let's Talk
                 </motion.a>
