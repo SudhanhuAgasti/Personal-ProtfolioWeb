@@ -34,10 +34,41 @@ export function Navbar() {
         >
           <a
             href="#top"
-            className="flex items-center gap-1.5 rounded-full px-2 py-1 text-xs font-semibold tracking-tight sm:gap-2 sm:px-4 sm:py-1.5 sm:text-sm"
+            className="flex items-center gap-2 rounded-full px-2 py-1 text-xs font-semibold tracking-tight sm:px-4 sm:py-1.5 sm:text-sm"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-[0_0_10px_var(--neon-violet)] sm:h-2 sm:w-2" />
-            SD<span className="text-muted-foreground font-normal hidden xs:inline">/dev</span>
+            <div className="relative flex items-center justify-center">
+              <svg
+                className="h-6 w-6 sm:h-7 sm:w-7"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <defs>
+                  <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="var(--neon-violet)" />
+                    <stop offset="100%" stopColor="var(--neon-cyan)" />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M20 8C20 8 16.5 5.5 12 8C7.5 10.5 11 15 16 16C21 17 24.5 21.5 20 24C15.5 26.5 12 24 12 24"
+                  stroke="url(#logo-grad)"
+                  strokeWidth="4.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M12 18L15 21L22 14"
+                  stroke="oklch(0.72 0.19 140)"
+                  strokeWidth="3.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  style={{ filter: "drop-shadow(0 0 5px oklch(0.72 0.19 140))" }}
+                />
+              </svg>
+            </div>
+            <span className="font-display text-sm font-extrabold tracking-tight text-white sm:text-base">
+              Ss <span className="text-[var(--neon-cyan)]">Das</span>
+            </span>
           </a>
           <div className="flex items-center gap-0.5 sm:gap-1">
             {links.map((l) => (
