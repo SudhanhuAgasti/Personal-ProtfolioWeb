@@ -12,7 +12,7 @@ function Field({
   label: string;
   type?: string;
   textarea?: boolean;
-  icon?: any;
+  icon?: React.ElementType;
 }) {
   const [val, setVal] = useState("");
   const [focus, setFocus] = useState(false);
