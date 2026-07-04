@@ -11,8 +11,8 @@ const projects = [
     tech: ["HTML5", "CSS3", "JavaScript", "UI Layout", "Responsive Design"],
     grad: "from-[#7C3AED] via-[#3B82F6] to-[#06B6D4]",
     img: swadeshiLogistics,
-    live: "#",
-    code: "#",
+    live: "https://github.com/shradha9348",
+    code: "https://github.com/shradha9348",
   },
   {
     name: "Disaster & Emergency Help Coordination Platform",
@@ -21,8 +21,8 @@ const projects = [
     tech: ["HTML5", "CSS3", "JavaScript", "Dashboard Design", "Mobile-First"],
     grad: "from-[#EC4899] via-[#8B5CF6] to-[#6366F1]",
     img: disasterRelief,
-    live: "#",
-    code: "#",
+    live: "https://github.com/shradha9348",
+    code: "https://github.com/shradha9348",
   },
 ];
 
@@ -42,7 +42,7 @@ export function Projects() {
               03 — Selected Work
             </p>
             <h2 className="mt-4 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-              Featured <span className="text-gradient">projects</span> !
+              Featured <span className="text-gradient">projects</span>!
             </h2>
           </div>
         </motion.div>
@@ -77,15 +77,19 @@ export function Projects() {
                     {String(i + 1).padStart(2, "0")}
                   </span>
                 </motion.div>
-                <div className="absolute right-4 top-4 flex gap-2 opacity-0 translate-y-2 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                <div className="absolute right-4 top-4 flex gap-2 md:opacity-0 md:translate-y-2 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 opacity-100 translate-y-0 z-10">
                   <a
                     href={p.code}
-                    className="glass grid h-10 w-10 place-items-center rounded-full hover:bg-white/20"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="glass grid h-10 w-10 place-items-center rounded-full hover:bg-white/20 text-white"
                   >
                     <Github size={16} />
                   </a>
                   <a
                     href={p.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="grid h-10 w-10 place-items-center rounded-full bg-white text-black hover:scale-110 transition-transform"
                   >
                     <ArrowUpRight size={16} />

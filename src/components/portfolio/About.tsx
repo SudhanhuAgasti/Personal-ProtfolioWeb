@@ -54,33 +54,28 @@ export function About() {
         </motion.div>
 
         <div className="mt-20 relative">
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent" />
-          <div className="space-y-16">
+          <div className="absolute left-6 top-2 bottom-2 w-px bg-gradient-to-b from-white/30 via-white/10 to-transparent" />
+          <div className="space-y-8">
             {timeline.map((item, i) => {
               const Icon = item.icon;
-              const align = i % 2 === 0;
               return (
                 <motion.div
                   key={item.year}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-80px" }}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
                   transition={{ duration: 0.7, delay: i * 0.05 }}
-                  className={`relative grid grid-cols-[auto_1fr] md:grid-cols-2 gap-8 md:gap-16 items-center ${align ? "" : "md:[&>*:first-child]:order-2"}`}
+                  className="relative pl-16"
                 >
-                  <div className={`md:text-right ${align ? "" : "md:text-left"}`}>
-                    <div className="glass hover-scale rounded-2xl p-6 transition-all hover:border-white/20 hover:shadow-[0_20px_80px_-30px_rgba(140,120,255,0.6)]">
-                      <p className="font-mono text-xs uppercase tracking-widest text-[var(--neon-violet)]">
-                        {item.year}
-                      </p>
-                      <h3 className="mt-2 text-xl font-semibold">{item.title}</h3>
-                      <p className="mt-2 text-sm text-muted-foreground">{item.desc}</p>
-                    </div>
+                  <div className="absolute left-0 top-2 grid h-12 w-12 place-items-center rounded-2xl glass glow-violet">
+                    <Icon size={18} className="text-[var(--neon-cyan)]" />
                   </div>
-                  <div className="relative flex items-center justify-center">
-                    <div className="absolute left-4 md:left-1/2 -translate-x-1/2 h-14 w-14 rounded-full glass-strong grid place-items-center glow-violet">
-                      <Icon size={20} className="text-[var(--neon-cyan)]" />
-                    </div>
+                  <div className="glass hover-scale rounded-2xl p-6 transition-all hover:border-white/20 hover:shadow-[0_20px_80px_-30px_rgba(140,120,255,0.6)]">
+                    <p className="font-mono text-xs uppercase tracking-widest text-[var(--neon-violet)]">
+                      {item.year}
+                    </p>
+                    <h3 className="mt-2 text-xl font-semibold">{item.title}</h3>
+                    <p className="mt-2 text-sm text-muted-foreground">{item.desc}</p>
                   </div>
                 </motion.div>
               );

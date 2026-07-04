@@ -50,11 +50,22 @@ export function Testimonials() {
           <AnimatePresence mode="wait">
             <motion.blockquote
               key={i}
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={0.2}
+              onDragEnd={(e, info) => {
+                const threshold = 50;
+                if (info.offset.x < -threshold) {
+                  setI((v) => (v + 1) % items.length);
+                } else if (info.offset.x > threshold) {
+                  setI((v) => (v - 1 + items.length) % items.length);
+                }
+              }}
               initial={{ opacity: 0, y: 20, filter: "blur(5px)" }}
               animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
               exit={{ opacity: 0, y: -20, filter: "blur(5px)" }}
               transition={{ duration: 0.4 }}
-              className="glass-strong relative w-full flex flex-col items-center justify-center rounded-3xl p-6 sm:p-10 text-center"
+              className="glass-strong relative w-full flex flex-col items-center justify-center rounded-3xl p-6 sm:p-10 text-center cursor-grab active:cursor-grabbing select-none touch-pan-y"
             >
               <Quote className="text-[var(--neon-violet)]" size={32} />
               <p className="mt-6 max-w-2xl text-lg font-medium leading-relaxed sm:text-xl md:text-2xl">
