@@ -21,7 +21,7 @@ const timeline = [
     icon: Users,
   },
   {
-    year: "2024 — Present",
+    year: "2024 — 2026",
     title: "Master of Computer Applications",
     desc: "Pursuing MCA at Institute of Management and Information Technology (IMIT), Cuttack.",
     icon: GraduationCap,
